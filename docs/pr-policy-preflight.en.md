@@ -24,17 +24,18 @@ policy, lint configuration, secrets, signing material, and content that cannot
 be safely reviewed from a diff.
 
 Ordinary application code should not be primarily classified by directory-based
-risk rules. Code quality should be handled by a separate normal `pull_request`
-CI job because that job executes PR code and must run without secrets and with
-minimal permissions.
+risk rules. Code quality is handled by a separate normal `pull_request` CI job
+because that job executes PR code and must run without secrets and with minimal
+permissions. This repository uses `.github/workflows/pr-flutter-quality.yml` for
+that check.
 
 Recommended quality gates:
 
-- `flutter analyze`: prefer a fully green result.
+- `flutter analyze --no-pub`: prefer a fully green result.
 - If the repository still has historical analyzer debt, maintain a baseline and
   require the PR to introduce no new analyzer issues. The long-term target
   should still be fully green.
-- `flutter test`: require tests to pass.
+- `flutter test --no-pub`: require tests to pass.
 - Add compile/build checks when the PR touches platform, flavor, release, or
   build-pipeline behavior.
 
