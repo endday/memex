@@ -135,6 +135,17 @@ Bad Examples:
 - **Important:** When organizing information into P.A.R.A. files, you must record the current input's fact_id (format: yyyy/mm/dd.md#ts_n) and asset_id (format: fs://xxxx.yyy) near the edited knowledge base file content. This allows subsequent new inputs to associate with previously related inputs in the P.A.R.A. knowledge system. Record the fact_id using the `<!-- fact_id: yyyy/mm/dd.md#ts_n -->` format. Record the asset_id using the `[memex]fs://xxxx.yyy` format.
 - **Language:** $fileLanguageInstruction
 
+# Non-Persistent Inputs
+User intent has priority over the default P.A.R.A. organization workflow. If the current raw input explicitly says not to save, remember, persist, write long-term memory, write into the knowledge base, or affect/modify existing knowledge, do not create, edit, move, or remove P.A.R.A. files for this input.
+
+For these inputs, call `skip_pkm_organization` as the completion action instead of writing P.A.R.A. files or forcing a timeline insight update. Use one of these reasons:
+- `explicit_user_opt_out`: the user explicitly says not to remember, persist, save, write long-term memory, or affect existing knowledge.
+- `temporary_state`: the input is explicitly framed as temporary, only today's state, or a short-lived condition.
+- `low_signal_noise`: the input is a test, noise, or too low-signal for durable organization.
+- `duplicate_existing_memory`: the input adds no durable information beyond existing knowledge.
+
+Examples that should use `skip_pkm_organization`: "只是试一下，不要记", "不要写成长记忆", "这只是今天状态，不要写成长记忆", "临时提醒，不要长期保存", "不要影响某某项目/规则".
+
 # Card Insights:
 Use the `update_timeline_card_insight` tool to update the insight section of the corresponding Timeline Card. This tool call must be included in your final message for the **New Raw Input Organization Task**, as it marks the completion of that specific workflow.
 - insight contains:
@@ -152,6 +163,7 @@ Use the `update_timeline_card_insight` tool to update the insight section of the
 # Primary Workflows
 ## New Raw Input Organization Task
 When the user provides new raw input, follow this sequence:
+0. **Respect Non-Persistence:** If the input has explicit non-persistence or no-op intent, call `skip_pkm_organization` and stop. Do not write or edit P.A.R.A. files for this input.
 1. **Analyze:** Extract all distinct information from the user's raw input.
 2. **Categorize:** Determine the storage location in the P.A.R.A. knowledge base based on `LS` results. If those are insufficient, use `Grep`, `Read` to gather more context.
 3. **Inspect:** If the target file exists, use `Read` to plan the edit and retrieve related fact_ids.
@@ -174,6 +186,37 @@ Examples:
 
   static String get pkmAgentUpdateCardInsightToolDescription =>
       'Updates the insight, summary and related facts of a timeline card.';
+
+  static String get pkmAgentSkipOrganizationToolDescription =>
+      'Marks the current raw input as intentionally non-persistent for PKM. Use this when the user explicitly asks not to save, remember, write long-term memory, or modify existing knowledge. This completes the PKM workflow without writing P.A.R.A. files.';
+
+  static Map<String, dynamic> get pkmAgentSkipOrganizationToolParameters => {
+        'type': 'object',
+        'properties': {
+          'reason': {
+            'type': 'string',
+            'enum': [
+              'explicit_user_opt_out',
+              'temporary_state',
+              'low_signal_noise',
+              'duplicate_existing_memory',
+            ],
+            'description':
+                'Why PKM organization is being skipped for this input.'
+          },
+          'temporal_scope': {
+            'type': 'string',
+            'description':
+                'The intended scope of the input, such as temporary, today_only, test_only, or duplicate.'
+          },
+          'evidence': {
+            'type': 'string',
+            'description':
+                'Short quote or paraphrase from the raw input proving the skip decision.'
+          },
+        },
+        'required': ['reason', 'temporal_scope', 'evidence']
+      };
 
   static Map<String, dynamic> get pkmAgentUpdateCardInsightToolParameters => {
         'type': 'object',
