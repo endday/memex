@@ -3089,7 +3089,7 @@ abstract class AppLocalizations {
   /// No description provided for @memexBalanceLabel.
   ///
   /// In en, this message translates to:
-  /// **'Balance: \${amount}'**
+  /// **'Balance: {amount}'**
   String memexBalanceLabel(Object amount);
 
   /// No description provided for @memexConfirmPassword.
@@ -3107,7 +3107,7 @@ abstract class AppLocalizations {
   /// No description provided for @memexPayAmount.
   ///
   /// In en, this message translates to:
-  /// **'Pay \${amount}'**
+  /// **'Pay {amount}'**
   String memexPayAmount(Object amount);
 
   /// No description provided for @modelIdLabel.

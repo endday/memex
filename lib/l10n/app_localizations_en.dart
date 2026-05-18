@@ -1675,7 +1675,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String memexBalanceLabel(Object amount) {
-    return 'Balance: \$$amount';
+    return 'Balance: $amount';
   }
 
   @override
@@ -1686,7 +1686,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String memexPayAmount(Object amount) {
-    return 'Pay \$$amount';
+    return 'Pay $amount';
   }
 
   @override

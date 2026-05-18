@@ -1627,7 +1627,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String memexBalanceLabel(Object amount) {
-    return '余额: \$$amount';
+    return '余额: $amount';
   }
 
   @override
@@ -1638,7 +1638,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String memexPayAmount(Object amount) {
-    return '支付 \$$amount';
+    return '支付 $amount';
   }
 
   @override

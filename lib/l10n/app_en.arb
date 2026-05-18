@@ -778,7 +778,7 @@
   },
   "memexCustomAmount": "Custom Amount",
   "memexViewHistory": "Usage History",
-  "memexBalanceLabel": "Balance: ${amount}",
+  "memexBalanceLabel": "Balance: {amount}",
   "@memexBalanceLabel": {
     "placeholders": {
       "amount": {}
@@ -786,7 +786,7 @@
   },
   "memexConfirmPassword": "Confirm Password",
   "memexPasswordMismatch": "Passwords do not match",
-  "memexPayAmount": "Pay ${amount}",
+  "memexPayAmount": "Pay {amount}",
   "@memexPayAmount": {
     "placeholders": {
       "amount": {}
