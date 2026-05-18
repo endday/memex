@@ -189,7 +189,7 @@ Tool buildGetScheduleCardsTool() {
         return jsonEncode(result);
       } catch (e) {
         logger.severe('Failed to get schedule cards: $e');
-        return "Error: $e";
+        throw Exception('Failed to get schedule cards: $e');
       }
     },
   );

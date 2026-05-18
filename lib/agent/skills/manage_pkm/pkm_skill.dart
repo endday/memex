@@ -84,11 +84,8 @@ class PkmSkill extends Skill {
           if (updatedCardData == null) {
             logger.warning(
                 "Card file not found for fact_id: $fact_id, maybe it has been deleted");
-            return AgentToolResult(
-              content: TextPart(
-                  Prompts.pkmAgentUpdateCardInsightErrorCardNotFound(fact_id)),
-              stopFlag: stopFlag,
-            );
+            throw StateError(
+                Prompts.pkmAgentUpdateCardInsightErrorCardNotFound(fact_id));
           }
 
           // Notify detail page to refresh after insight update
