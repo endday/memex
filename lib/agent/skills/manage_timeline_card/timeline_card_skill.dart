@@ -344,10 +344,8 @@ class TimelineCardSkill extends Skill {
             );
 
             if (updatedCardData == null) {
-              return AgentToolResult(
-                content: TextPart(
-                    "Card file not found for fact_id: $fact_id, maybe it has been deleted"),
-              );
+              throw StateError(
+                  "Card file not found for fact_id: $fact_id, maybe it has been deleted");
             }
 
             // Log event
@@ -379,9 +377,7 @@ class TimelineCardSkill extends Skill {
             );
           } catch (e, stack) {
             logger.severe("SaveTimelineCard failed", e, stack);
-            return AgentToolResult(
-              content: TextPart("Failed to save timeline card: $e"),
-            );
+            rethrow;
           }
         },
       ),

@@ -124,7 +124,7 @@ A list of events sorted by time (newest first), each containing:
 
         return buffer.toString();
       } catch (e) {
-        return 'Error searching event logs: $e';
+        throw StateError('Error searching event logs: $e');
       }
     },
   );
