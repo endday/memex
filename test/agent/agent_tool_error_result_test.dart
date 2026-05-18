@@ -62,6 +62,24 @@ void main() {
       expect(_text(result), contains('fact id: 2026/05/18.md#ts_999'));
     });
 
+    test('save_timeline_card address schema excludes future destinations', () {
+      final tool = TimelineCardSkill(
+        forceActivate: true,
+        stopAfterSuccessSaveCard: true,
+      ).tools!.singleWhere((tool) => tool.name == 'save_timeline_card');
+      final parameters = Map<String, dynamic>.from(tool.parameters as Map);
+      final properties =
+          Map<String, dynamic>.from(parameters['properties'] as Map);
+      final address =
+          Map<String, dynamic>.from(properties['address'] as Map);
+      final description = address['description'] as String;
+
+      expect(description, contains('where the recorded card actually happened'));
+      expect(description, contains('tasks, todos, reminders, plans'));
+      expect(description, contains('future destinations'));
+      expect(description, contains('omit address'));
+    });
+
     test('save_timeline_card accepts JSON-encoded list arguments', () async {
       final tool = TimelineCardSkill(
         forceActivate: true,

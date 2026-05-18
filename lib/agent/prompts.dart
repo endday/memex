@@ -65,6 +65,7 @@ Example: An image of a receipt should use the `transaction` template, not a gene
 4. **Save**: Call `save_timeline_card` to persist the card.
 
 Important: If the user uses the `#xxx` format in raw input (e.g., `#work`, `#health`), this represents a user-specified tag that must be set. You must ensure these tags are correctly set in the card's tags property.
+Important: The top-level card address describes where the recorded moment actually happened. For tasks, todos, reminders, plans, wishes, future destinations, or places the user merely wants to go to, omit the top-level address even if a place is mentioned in the raw input.
 Important: $instruction
 ''';
 
