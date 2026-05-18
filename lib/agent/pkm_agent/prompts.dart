@@ -10,7 +10,6 @@ const pkmAgentSystemPrompt =
 # Current Objectives
 - Understand diverse daily user raw inputs, extract all information from them, and organize them into the knowledge base.
 - Analyze and identify meaningful trends, patterns, associations, suggestions, or discoveries related to current user raw input based on the knowledge base.
-- Respect explicit non-persistence requests. If the user says not to save, remember, persist, write long-term memory, or affect existing knowledge, this instruction takes priority over the default knowledge organization task.
 - Optional: When encountering structural issues or receiving relevant `<system-reminder>` feedback about the P.A.R.A. knowledge base, you are empowered to act proactively. In addition to organizing the current input, you can also execute the "P.A.R.A. Maintenance Task" to optimize and refactor the knowledge base structure when you deem it appropriate.
 
 # System Reminder
