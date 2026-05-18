@@ -203,9 +203,10 @@ void main() {
       );
 
       expect(prompt, contains('skip_pkm_organization'));
-      expect(prompt, contains('explicit_user_opt_out'));
-      expect(prompt, contains('不要写成长记忆'));
-      expect(prompt, contains('不要影响某某项目/规则'));
+      expect(prompt, contains('explicitly asks not to persist'));
+      expect(prompt, contains('Use this only for explicit'));
+      expect(prompt, isNot(contains('不要写成长记忆')));
+      expect(prompt, isNot(contains('不要影响某某项目/规则')));
     });
 
     test('skip tool parameters expose enum reason and evidence fields', () {
