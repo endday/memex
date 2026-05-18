@@ -38,8 +38,6 @@ class _MemexAuthSectionState extends State<MemexAuthSection> {
   bool _isTopUpLoading = false;
 
   // Applied credentials display
-  String? _appliedBaseUrl;
-  String? _appliedApiKey;
 
   // Pricing info
   double? _groupRatio;
@@ -86,8 +84,6 @@ class _MemexAuthSectionState extends State<MemexAuthSection> {
       );
       if (mounted) {
         setState(() {
-          _appliedBaseUrl = credentials.baseUrl;
-          _appliedApiKey = credentials.apiKey;
         });
       }
     }
@@ -361,7 +357,7 @@ class _MemexAuthSectionState extends State<MemexAuthSection> {
                     style: OutlinedButton.styleFrom(
                       padding: EdgeInsets.zero,
                       backgroundColor: isSelected
-                          ? AppColors.primary.withOpacity(0.1)
+                          ? AppColors.primary.withValues(alpha: 0.1)
                           : null,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6),
@@ -391,7 +387,7 @@ class _MemexAuthSectionState extends State<MemexAuthSection> {
                     padding: EdgeInsets.zero,
                     backgroundColor: _selectedTopUpAmount != null &&
                             ![5, 20, 100].contains(_selectedTopUpAmount)
-                        ? AppColors.primary.withOpacity(0.1)
+                        ? AppColors.primary.withValues(alpha: 0.1)
                         : null,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6),
@@ -596,7 +592,7 @@ class _MemexHistorySheet extends StatefulWidget {
 }
 
 class _MemexHistorySheetState extends State<_MemexHistorySheet> {
-  List<LogEntry> _logs = [];
+  final List<LogEntry> _logs = [];
   bool _isLoading = true;
   bool _hasMore = true;
   int _page = 1;

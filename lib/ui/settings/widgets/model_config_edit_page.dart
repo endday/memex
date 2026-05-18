@@ -539,7 +539,7 @@ class _ModelConfigEditPageState extends State<ModelConfigEditPage>
         _ProviderEntry(LLMConfig.typeGeminiOauth, l10n.providerGeminiOauth),
       ],
       l10n.providerGroupOthers: [
-        _ProviderEntry(LLMConfig.typeMemex, 'Memex AI'),
+        const _ProviderEntry(LLMConfig.typeMemex, 'Memex AI'),
         _ProviderEntry(LLMConfig.typeKimi, l10n.providerKimi),
         _ProviderEntry(LLMConfig.typeQwen, l10n.providerQwen),
         _ProviderEntry(LLMConfig.typeSeed, l10n.providerSeed),
