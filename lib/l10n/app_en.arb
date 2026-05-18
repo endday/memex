@@ -1219,6 +1219,35 @@
   "locationDebugUnavailable": "unavailable",
   "locationDebugInjected": "injected",
   "locationDebugNotInjected": "not injected",
+  "locationStatusUpdatedAt": "Updated",
+  "locationStatusSuccessTitle": "Current location is ready",
+  "locationStatusSuccessBody": "Memex can attach this location summary when location context is relevant.",
+  "locationStatusApproximateTitle": "Approximate location only",
+  "locationStatusApproximateBody": "Accuracy looks city or area level. You can keep using it, or enable Precise Location in system settings for a tighter context.",
+  "locationStatusServiceDisabledTitle": "System location is off",
+  "locationStatusServiceDisabledBody": "Memex only uses device GPS and will not infer location from network or IP. On Android, open Location settings; on iOS, enable Settings > Privacy & Security > Location Services.",
+  "locationStatusPermissionDeniedTitle": "Location permission is needed",
+  "locationStatusPermissionDeniedBody": "Allow Memex to use location while testing or when location context is needed. Always access is not requested.",
+  "locationStatusPermissionForeverTitle": "Location permission is blocked",
+  "locationStatusPermissionForeverBody": "Open app settings and allow location for Memex. On iOS, While Using the App is enough.",
+  "locationStatusDisabledTitle": "Location Context is off",
+  "locationStatusDisabledBody": "Turn on the switch above and save when you want Memex to attach device location to agent context.",
+  "locationStatusGeocodeUnavailableTitle": "GPS works, address lookup failed",
+  "locationStatusGeocodeUnavailableBody": "Memex has coordinates but will not inject GPS-only context into the agent. Check the reverse geocoding provider and try again.",
+  "locationStatusUnavailableTitle": "Location unavailable",
+  "locationStatusUnavailableBody": "Check system location services and app permission, then test again.",
+  "allowLocationPermissionButton": "Allow location permission",
+  "openAppSettingsButton": "Open app settings",
+  "openLocationSettingsButton": "Open location settings",
+  "locationSettingsOpenFailed": "Could not open system settings.",
+  "locationActionFailed": "Location action failed: {error}",
+  "@locationActionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
 
   "settingsSearchPlaceholder": "Search settings...",
   "settingsSearchEmpty": "No matching settings found",
