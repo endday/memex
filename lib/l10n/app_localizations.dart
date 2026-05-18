@@ -4856,6 +4856,138 @@ abstract class AppLocalizations {
   /// **'not injected'**
   String get locationDebugNotInjected;
 
+  /// No description provided for @locationStatusUpdatedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated'**
+  String get locationStatusUpdatedAt;
+
+  /// No description provided for @locationStatusSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Current location is ready'**
+  String get locationStatusSuccessTitle;
+
+  /// No description provided for @locationStatusSuccessBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Memex can attach this location summary when location context is relevant.'**
+  String get locationStatusSuccessBody;
+
+  /// No description provided for @locationStatusApproximateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate location only'**
+  String get locationStatusApproximateTitle;
+
+  /// No description provided for @locationStatusApproximateBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy looks city or area level. You can keep using it, or enable Precise Location in system settings for a tighter context.'**
+  String get locationStatusApproximateBody;
+
+  /// No description provided for @locationStatusServiceDisabledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'System location is off'**
+  String get locationStatusServiceDisabledTitle;
+
+  /// No description provided for @locationStatusServiceDisabledBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Memex only uses device GPS and will not infer location from network or IP. On Android, open Location settings; on iOS, enable Settings > Privacy & Security > Location Services.'**
+  String get locationStatusServiceDisabledBody;
+
+  /// No description provided for @locationStatusPermissionDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is needed'**
+  String get locationStatusPermissionDeniedTitle;
+
+  /// No description provided for @locationStatusPermissionDeniedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Memex to use location while testing or when location context is needed. Always access is not requested.'**
+  String get locationStatusPermissionDeniedBody;
+
+  /// No description provided for @locationStatusPermissionForeverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is blocked'**
+  String get locationStatusPermissionForeverTitle;
+
+  /// No description provided for @locationStatusPermissionForeverBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Open app settings and allow location for Memex. On iOS, While Using the App is enough.'**
+  String get locationStatusPermissionForeverBody;
+
+  /// No description provided for @locationStatusDisabledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Context is off'**
+  String get locationStatusDisabledTitle;
+
+  /// No description provided for @locationStatusDisabledBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on the switch above and save when you want Memex to attach device location to agent context.'**
+  String get locationStatusDisabledBody;
+
+  /// No description provided for @locationStatusGeocodeUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS works, address lookup failed'**
+  String get locationStatusGeocodeUnavailableTitle;
+
+  /// No description provided for @locationStatusGeocodeUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Memex has coordinates but will not inject GPS-only context into the agent. Check the reverse geocoding provider and try again.'**
+  String get locationStatusGeocodeUnavailableBody;
+
+  /// No description provided for @locationStatusUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location unavailable'**
+  String get locationStatusUnavailableTitle;
+
+  /// No description provided for @locationStatusUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Check system location services and app permission, then test again.'**
+  String get locationStatusUnavailableBody;
+
+  /// No description provided for @allowLocationPermissionButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow location permission'**
+  String get allowLocationPermissionButton;
+
+  /// No description provided for @openAppSettingsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Open app settings'**
+  String get openAppSettingsButton;
+
+  /// No description provided for @openLocationSettingsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Open location settings'**
+  String get openLocationSettingsButton;
+
+  /// No description provided for @locationSettingsOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open system settings.'**
+  String get locationSettingsOpenFailed;
+
+  /// No description provided for @locationActionFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Location action failed: {error}'**
+  String locationActionFailed(String error);
+
   /// No description provided for @settingsSearchPlaceholder.
   ///
   /// In en, this message translates to:

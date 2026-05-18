@@ -2580,6 +2580,80 @@ class AppLocalizationsZh extends AppLocalizations {
   String get locationDebugNotInjected => '未注入';
 
   @override
+  String get locationStatusUpdatedAt => '更新时间';
+
+  @override
+  String get locationStatusSuccessTitle => '当前位置已可用';
+
+  @override
+  String get locationStatusSuccessBody => '当位置上下文与对话相关时，Memex 可以附加这段位置摘要。';
+
+  @override
+  String get locationStatusApproximateTitle => '仅获得大致位置';
+
+  @override
+  String get locationStatusApproximateBody =>
+      '当前精度看起来只到城市或区域级别。你可以继续使用，也可以在系统设置中开启精确位置以获得更细的上下文。';
+
+  @override
+  String get locationStatusServiceDisabledTitle => '系统定位已关闭';
+
+  @override
+  String get locationStatusServiceDisabledBody =>
+      'Memex 只使用设备 GPS，不会通过网络或 IP 推测位置。Android 可打开定位设置；iOS 请前往 设置 > 隐私与安全性 > 定位服务 开启。';
+
+  @override
+  String get locationStatusPermissionDeniedTitle => '需要允许位置权限';
+
+  @override
+  String get locationStatusPermissionDeniedBody =>
+      '仅在测试或实际需要位置上下文时允许 Memex 使用位置即可；不会请求始终访问。';
+
+  @override
+  String get locationStatusPermissionForeverTitle => '位置权限已被系统阻止';
+
+  @override
+  String get locationStatusPermissionForeverBody =>
+      '请打开应用设置，重新允许 Memex 使用位置。iOS 选择“使用 App 期间”即可。';
+
+  @override
+  String get locationStatusDisabledTitle => '位置上下文未开启';
+
+  @override
+  String get locationStatusDisabledBody =>
+      '如果希望 Memex 为 Agent 上下文附加设备位置，请打开上方开关并保存。';
+
+  @override
+  String get locationStatusGeocodeUnavailableTitle => 'GPS 可用，但地址解析失败';
+
+  @override
+  String get locationStatusGeocodeUnavailableBody =>
+      'Memex 已拿到坐标，但不会把纯 GPS 坐标注入给 Agent。请检查逆地理编码服务商后再试。';
+
+  @override
+  String get locationStatusUnavailableTitle => '位置不可用';
+
+  @override
+  String get locationStatusUnavailableBody => '请检查系统定位服务和应用权限，然后再次测试。';
+
+  @override
+  String get allowLocationPermissionButton => '允许位置权限';
+
+  @override
+  String get openAppSettingsButton => '打开应用设置';
+
+  @override
+  String get openLocationSettingsButton => '开启系统定位';
+
+  @override
+  String get locationSettingsOpenFailed => '无法打开系统设置。';
+
+  @override
+  String locationActionFailed(String error) {
+    return '位置操作失败：$error';
+  }
+
+  @override
   String get settingsSearchPlaceholder => '搜索设置项...';
 
   @override

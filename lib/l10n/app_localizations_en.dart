@@ -2671,6 +2671,85 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationDebugNotInjected => 'not injected';
 
   @override
+  String get locationStatusUpdatedAt => 'Updated';
+
+  @override
+  String get locationStatusSuccessTitle => 'Current location is ready';
+
+  @override
+  String get locationStatusSuccessBody =>
+      'Memex can attach this location summary when location context is relevant.';
+
+  @override
+  String get locationStatusApproximateTitle => 'Approximate location only';
+
+  @override
+  String get locationStatusApproximateBody =>
+      'Accuracy looks city or area level. You can keep using it, or enable Precise Location in system settings for a tighter context.';
+
+  @override
+  String get locationStatusServiceDisabledTitle => 'System location is off';
+
+  @override
+  String get locationStatusServiceDisabledBody =>
+      'Memex only uses device GPS and will not infer location from network or IP. On Android, open Location settings; on iOS, enable Settings > Privacy & Security > Location Services.';
+
+  @override
+  String get locationStatusPermissionDeniedTitle =>
+      'Location permission is needed';
+
+  @override
+  String get locationStatusPermissionDeniedBody =>
+      'Allow Memex to use location while testing or when location context is needed. Always access is not requested.';
+
+  @override
+  String get locationStatusPermissionForeverTitle =>
+      'Location permission is blocked';
+
+  @override
+  String get locationStatusPermissionForeverBody =>
+      'Open app settings and allow location for Memex. On iOS, While Using the App is enough.';
+
+  @override
+  String get locationStatusDisabledTitle => 'Location Context is off';
+
+  @override
+  String get locationStatusDisabledBody =>
+      'Turn on the switch above and save when you want Memex to attach device location to agent context.';
+
+  @override
+  String get locationStatusGeocodeUnavailableTitle =>
+      'GPS works, address lookup failed';
+
+  @override
+  String get locationStatusGeocodeUnavailableBody =>
+      'Memex has coordinates but will not inject GPS-only context into the agent. Check the reverse geocoding provider and try again.';
+
+  @override
+  String get locationStatusUnavailableTitle => 'Location unavailable';
+
+  @override
+  String get locationStatusUnavailableBody =>
+      'Check system location services and app permission, then test again.';
+
+  @override
+  String get allowLocationPermissionButton => 'Allow location permission';
+
+  @override
+  String get openAppSettingsButton => 'Open app settings';
+
+  @override
+  String get openLocationSettingsButton => 'Open location settings';
+
+  @override
+  String get locationSettingsOpenFailed => 'Could not open system settings.';
+
+  @override
+  String locationActionFailed(String error) {
+    return 'Location action failed: $error';
+  }
+
+  @override
   String get settingsSearchPlaceholder => 'Search settings...';
 
   @override
